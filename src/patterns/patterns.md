@@ -41,4 +41,7 @@
 - **Course Schedule problem:** In order to move a particular course all the prerequisite courses must be done.
 
 
+### 14. Frequency Counter Pattern
+
+
 

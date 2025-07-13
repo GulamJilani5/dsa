@@ -1,3 +1,4 @@
+import patterns.FrequencyCounterPattern.FrequencyCounterPattern;
 import patterns.SlidingWindow.SlidingWindow;
 import patterns.TwoPointers.TwoPointer;
 
@@ -7,12 +8,23 @@ public class Main {
     public static void main(String[] args) {
 
         // Two Pointer
-        TwoPointer twoPointer = new TwoPointer();
-        twoPointer.twoSumPointerMethod();
+//        TwoPointer twoPointer = new TwoPointer();
+//        twoPointer.twoSumPointerMethod();
+//        twoPointer.removeDuplicatesMethod();
 
         // Sliding Window
         SlidingWindow slidingWindow = new SlidingWindow();
-        slidingWindow.maxSumSubarrayMethod();
-        // Dynaprogramming
+//        slidingWindow.maxSumSubarrayMethod();
+        slidingWindow.findMaxAverageSlidingWindow();
+        slidingWindow.lengthOfLongestSubstringSlidingWindow();
+        slidingWindow.lengthOfLongestSubstringSlidingWindowFrequencyArray();
+        // Dynamic programming
+
+
+        // Frequncy Count
+//        FrequencyCounterPattern frequencyCounterPattern = new FrequencyCounterPattern();
+//        frequencyCounterPattern.charFrequncyCount();
+
+
     }
 }
