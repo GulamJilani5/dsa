@@ -1,4 +1,6 @@
+import patterns.DynamicProgramming.DynamicProgramming;
 import patterns.FrequencyCounterPattern.FrequencyCounterPattern;
+import patterns.PrefixSum.PrefixSum;
 import patterns.SlidingWindow.SlidingWindow;
 import patterns.TwoPointers.TwoPointer;
 
@@ -15,16 +17,27 @@ public class Main {
         // Sliding Window
         SlidingWindow slidingWindow = new SlidingWindow();
 //        slidingWindow.maxSumSubarrayMethod();
-        slidingWindow.findMaxAverageSlidingWindow();
-        slidingWindow.lengthOfLongestSubstringSlidingWindow();
-        slidingWindow.lengthOfLongestSubstringSlidingWindowFrequencyArray();
-        // Dynamic programming
+//        slidingWindow.findMaxAverageSlidingWindow();
+//        slidingWindow.lengthOfLongestSubstringSlidingWindow();
+//        slidingWindow.lengthOfLongestSubstringSlidingWindowFrequencyArray();
 
+        // Dynamic programming
+        DynamicProgramming dynamicProgramming = new DynamicProgramming();
+        dynamicProgramming.LenghtOfLongestIncreasingSubsequence();
+        dynamicProgramming.longestSubsequence();
+        dynamicProgramming.houseRobber();
+        dynamicProgramming.fibonacciNumber();
+        dynamicProgramming.climbingStairs();
+        dynamicProgramming.knapsackMethod();
 
         // Frequncy Count
 //        FrequencyCounterPattern frequencyCounterPattern = new FrequencyCounterPattern();
 //        frequencyCounterPattern.charFrequncyCount();
 
+
+        // Prefix Sum
+        PrefixSum prefixSum = new PrefixSum();
+//        prefixSum.prefixSumMethod();
 
     }
 }

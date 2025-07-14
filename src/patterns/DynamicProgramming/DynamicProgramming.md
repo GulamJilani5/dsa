@@ -3,8 +3,10 @@
 
 
 ### Problems it solves:
-- Fibonacci sequence.
-- Knapsack problem.
+- Fibonacci Number (Top-Down and Bottom-Up DP)
+-  Climbing Stairs
+-  0/1 Knapsack problem.
+- House Robber
 - Longest common subsequence.
 - Coin change problem.
 - Matrix chain multiplication.

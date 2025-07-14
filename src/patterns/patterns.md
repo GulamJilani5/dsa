@@ -33,15 +33,32 @@
 
 ### 11. Modified Binary Search
 
-### 12. Binary Tree DFS
+### 12. Binary Tree Traversal
 
-### 13. Binary Tree BFS
+### 13. Binary Tree DFS
 
-### 13. Topological Sort
+### 14. Binary Tree BFS
+
+### 15. Matrix Traversal
+
+### 16. Topological Sort
 - **Course Schedule problem:** In order to move a particular course all the prerequisite courses must be done.
 
+### 17. Frequency Counter Pattern
 
-### 14. Frequency Counter Pattern
+### 18. Backtracking
+
+### 19. LinkedList In-Place Reversal
+
+
+
+
+
+
+
+
+
+
 
 
 
