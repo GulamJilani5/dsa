@@ -10,7 +10,7 @@ add up to the target.
 
 ***************************************************************************************************/
 
-package patterns.TwoPointers;
+package patterns.TwoPointers.codes;
 
 public class TwoSumPointer {
 

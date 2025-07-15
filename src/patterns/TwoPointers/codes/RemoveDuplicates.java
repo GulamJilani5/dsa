@@ -1,4 +1,4 @@
-package patterns.TwoPointers;
+package patterns.TwoPointers.codes;
 
 public class RemoveDuplicates {
 
