@@ -3,6 +3,7 @@ import BasicPrograms.strings.StringClass;
 import patterns.DynamicProgramming.DynamicProgramming;
 import patterns.FrequencyCounterPattern.DuplicateValues;
 import patterns.FrequencyCounterPattern.FrequencyCounterPattern;
+import patterns.PrefixAndSuffixPattern.PrefixAndSuffix;
 import patterns.PrefixSum.PrefixSum;
 import patterns.SlidingWindow.SlidingWindow;
 import patterns.TwoPointers.TwoPointer;
@@ -48,6 +49,7 @@ public class Main {
 //        prefixSum.prefixSumMethod();
 
 
+
         // ARRAY
         ArrayClass arrayClass = new ArrayClass();
 //      arrayClass.maxAndMinValuesMethod();
@@ -60,8 +62,13 @@ public class Main {
 //        stringClass.capitalizeFirstCharacterMethod();
 //        stringClass.capitalizeWordsMethod();
 //        stringClass.collectStringMethod();
-        stringClass.countCharacterMethod();
-        stringClass.substringSearchMethod();
+//        stringClass.countCharacterMethod();
+//        stringClass.substringSearchMethod();
+
+        //Prefix And Suffix Pattern
+        PrefixAndSuffix prefixAndSuffix = new PrefixAndSuffix();
+//        prefixAndSuffix.productExceptSelfMethod();
+        prefixAndSuffix.sumExceptSelfMethod();
 
     }
 }

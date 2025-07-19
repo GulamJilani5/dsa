@@ -50,6 +50,8 @@
 
 ### 19. LinkedList In-Place Reversal
 
+### 20. Prefix and Suffix Product Pattern (Product elements of array except self)
+
 
 
 
