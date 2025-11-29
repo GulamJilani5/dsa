@@ -1,6 +1,7 @@
 import BasicPrograms.arrays.ArrayClass;
 import BasicPrograms.strings.StringClass;
 import patterns.DynamicProgramming.DynamicProgramming;
+import patterns.FastAndSlowPointer.FastAndSlowPointer;
 import patterns.FrequencyCounterPattern.DuplicateValues;
 import patterns.FrequencyCounterPattern.FrequencyCounterPattern;
 import patterns.PrefixAndSuffixPattern.PrefixAndSuffix;
@@ -68,7 +69,11 @@ public class Main {
         //Prefix And Suffix Pattern
         PrefixAndSuffix prefixAndSuffix = new PrefixAndSuffix();
 //        prefixAndSuffix.productExceptSelfMethod();
-        prefixAndSuffix.sumExceptSelfMethod();
+//        prefixAndSuffix.sumExceptSelfMethod();
+
+        // Fast And Slow Pointer
+        FastAndSlowPointer fastAndSlowPointer = new FastAndSlowPointer();
+        fastAndSlowPointer.fastAndSlowPointerExample();
 
     }
 }

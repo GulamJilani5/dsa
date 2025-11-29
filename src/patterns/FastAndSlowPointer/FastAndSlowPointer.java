@@ -5,8 +5,6 @@ import patterns.FastAndSlowPointer.codes.LinkedListUtils;
 
 public class FastAndSlowPointer {
 
-    LinkedListUtils linkedListUtils = new LinkedListUtils();
-
     public void fastAndSlowPointerExample(){
 
         // Shorter alias for node class

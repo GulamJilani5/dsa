@@ -1,3 +1,6 @@
-# Front End Use Cases
-### Google Map
+# Graph
 
+### Use Cases
+
+- Cities, friends and social media
+- Google Map
