@@ -12,6 +12,7 @@ import java.util.HashSet;
 
 public class SlidingWindowMaxSum {
 
+    // Two-Phase Sliding Window
     public int maxSumSubarrayMethod(int[] arr, int k) {
         int n = arr.length;
 
@@ -38,6 +39,27 @@ public class SlidingWindowMaxSum {
         return maxSum;
     }
 
+    /****
+     * Single Loop Sliding Window
+     * 
+     *
+     * public static int maxSubarraySumSliding(int[] arr, int k) {
+     * int windowSum = 0;
+     * int maxSum = Integer.MIN_VALUE;
+     * 
+     * for (int i = 0; i < arr.length; i++) {
+     * windowSum += arr[i];
+     * 
+     * if (i >= k - 1) {
+     * maxSum = Math.max(maxSum, windowSum);
+     * windowSum -= arr[i - k + 1];
+     * }
+     * }
+     * return maxSum;
+     * }
+     * 
+     */
+
     public double findMaxAverageSlidingWindow(int[] nums, int k) {
         int n = nums.length;
 
@@ -61,7 +83,10 @@ public class SlidingWindowMaxSum {
         return (double) maxSum / k;
     }
 
-    public int lengthOfLongestSubstringSlidingWindow(String str) {
+    // Find the length of the longest substring without repeating characters using
+    // the HashSet technique
+
+    public int lengthOfLongestSubstringSlidingWindow_method1(String str) {
         int n = str.length();
         HashSet<Character> seen = new HashSet<>(); // Store characters in the current window
         int maxLength = 0;
@@ -86,7 +111,7 @@ public class SlidingWindowMaxSum {
     // Input: "abcabcbb"
     // Output: 3
     // Explanation: Longest substring without repeating characters is "abc"
-    public int lengthOfLongestSubstringSlidingWindowFrequencyArray(String s) {
+    public int lengthOfLongestSubstringSlidingWindow_method2(String s) {
         int n = s.length();
         int[] freq = new int[128]; // ASCII character frequency array
         int maxLength = 0;
