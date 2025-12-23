@@ -195,6 +195,7 @@ public class Example {
 ##### 🔵 Using Standard Java
 
 - Two Pointer
+  - Check two pointer at `D:\Jilani\learning\dsa\src\patterns\TwoPointers\codes\CountUniqueValues.java`.
 
 ```java
 import java.util.*;
