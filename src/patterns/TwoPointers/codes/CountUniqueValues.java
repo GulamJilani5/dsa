@@ -1,10 +1,11 @@
 package patterns.TwoPointers.codes;
 
-public class CountUniqueValues{
+public class CountUniqueValues {
 
     // Method 1
     public int countUniqueElement(int[] arr) {
-        if (arr.length == 0) return 0;
+        if (arr.length == 0)
+            return 0;
 
         int i = 0;
         for (int j = 1; j < arr.length; j++) {
@@ -18,25 +19,25 @@ public class CountUniqueValues{
 
     // Method 2
     /*
-    public int countUniqueElement(int[] arr) {
-        if (arr.length == 0) return 0;
-
-        int left = 0;
-        int next = left + 1;
-
-        while (next < arr.length) {
-            if (arr[left] == arr[next]) {
-                next++;
-            } else {
-                left++;
-                arr[left] = arr[next]; // overwrite the duplicate position
-                next++;
-            }
-        }
-
-        return left + 1; // total count of unique values
-    }
-
+     * public int countUniqueElement(int[] arr) {
+     * if (arr.length == 0) return 0;
+     * 
+     * int left = 0;
+     * int next = left + 1;
+     * 
+     * while (next < arr.length) {
+     * if (arr[left] == arr[next]) {
+     * next++;
+     * } else {
+     * left++;
+     * arr[left] = arr[next]; // overwrite the duplicate position
+     * next++;
+     * }
+     * }
+     * 
+     * return left + 1; // total count of unique values
+     * }
+     * 
      */
 
 }

@@ -8,8 +8,6 @@ Given two strings text1 and text2, return the length of the longest common subse
 
  */
 
-
-
 package patterns.DynamicProgramming.codes;
 
 public class LongestCommonSubsequence {

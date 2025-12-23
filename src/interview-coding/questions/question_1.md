@@ -10,9 +10,11 @@ output = {24, 12, 8, 6};
 Find Asnwer `D:\Jilani\learning\dsa\src\interview-coding\asnwers\answer_1.md`,
 `D:\Jilani\learning\dsa\src\patterns\PrefixAndSuffixPattern\codes\ProductExceptSelf.java`
 
-### ➡️
+### ➡️ Frequency of Each character
 
-### ➡️
+### ➡️ Find Unique Value count & print each value.
+
+### ➡️ Find Duplicate Value count & print each value.
 
 ### ➡️
 
