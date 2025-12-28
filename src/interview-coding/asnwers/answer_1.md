@@ -332,3 +332,108 @@ public class Main {
 ```
 
 - Using stream will same as fro Sorted Array
+
+## ➡️ Frequency of each character
+
+### 🟦 Using for loop
+
+```java
+import java.util.HashMap;
+import java.util.Map;
+
+public class Main {
+    public static void main(String[] args) {
+
+        String input = "aabbccda";
+        Map<Character, Integer> freqMap = new HashMap<>();
+
+        for (char ch : input.toCharArray()) {
+            freqMap.put(ch, freqMap.getOrDefault(ch, 0) + 1);
+        }
+
+        System.out.println(freqMap);
+    }
+}
+
+```
+
+- ASCII Frequency Count – Simple & Fast
+
+```java
+  public class Main {
+    public static void main(String[] args) {
+
+        String input = "aabbccda";
+
+        int[] freq = new int[256]; // ASCII frequency array
+
+        for (int i = 0; i < input.length(); i++) {
+            char ch = input.charAt(i);
+            freq[ch]++;   // ASCII value used as index
+        }
+
+        // Print result
+        for (int i = 0; i < freq.length; i++) {
+            if (freq[i] > 0) { // If no condition then run infinite times
+                System.out.println((char) i + " -> " + freq[i]);
+            }
+        }
+    }
+}
+
+```
+
+##### 🔵 Using Java Stream
+
+```java
+import java.util.Map;
+import java.util.stream.Collectors;
+
+public class Main {
+    public static void main(String[] args) {
+
+        String input = "aabbccda";
+
+        Map<Character, Long> freqMap =
+                //  input.toLowerCase().chars() - For case sensitive
+                input.chars()
+                     .mapToObj(c -> (char) c)
+                     .collect(Collectors.groupingBy(
+                             c -> c,
+                             Collectors.counting()
+                     ));
+
+        System.out.println(freqMap);
+    }
+}
+
+```
+
+- Stream with LinkedHashMap (Preserve order)
+
+```java
+ Map<Character, Long> freqMap =
+        input.chars()
+             .mapToObj(c -> (char) c)
+             .collect(Collectors.groupingBy(
+                     c -> c,
+                     LinkedHashMap::new,
+                     Collectors.counting()
+             ));
+
+```
+
+-
+
+```java
+String s1 = "Java";
+String s2 = "Software";
+
+s1 = s1 + s2;                  // "JavaSoftware"
+s2 = s1.substring(0, s1.length() - s2.length()); // "Java"
+s1 = s1.substring(s2.length()); // "Software"
+
+System.out.println(s1); // Software
+System.out.println(s2); // Java
+
+```
