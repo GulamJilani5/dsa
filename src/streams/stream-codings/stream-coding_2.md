@@ -39,7 +39,7 @@ class Main {
 class Employee {
     int empid;
     String name;
-    int salary;          // Using int for simplicity (common in interviews)
+    int salary;      // Using int for simplicity (common in interviews but in real project it should bedouble)
     String department;
     public Employee(int empid, String name, int salary, String department) {
         this.empid = empid;
@@ -76,4 +76,16 @@ class Employee {
             )
         ));
 
+```
+
+# ➡️ How to find the average salary from each department using Java 8 Streams?
+
+```java
+ Map<String, Double> avgSalaryByDept = employeeList.stream()
+                    .collect(Collectors.groupingBy(
+                        Employee::getDepartment,
+                        Collectors.averagingInt(Employee::getSalary)
+                    ));
+
+        System.out.println(avgSalaryByDept);
 ```
