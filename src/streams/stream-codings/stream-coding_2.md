@@ -1,6 +1,6 @@
 ⏺️ ➡️ 🟦 🔵 🟢🔴⭕🟠🟣🟥🟧✔️ ☑️ • ‣ → ⁕
 
-# ➡️ Find the second highest salary of employee table
+# ➡️ Find the second highest salary of employee table.
 
 ```java
 
@@ -39,7 +39,7 @@ class Main {
 class Employee {
     int empid;
     String name;
-    int salary;      // Using int for simplicity (common in interviews but in real project it should bedouble)
+    int salary;      // Using int for simplicity (common in interviews but in real project it should be double)
     String department;
     public Employee(int empid, String name, int salary, String department) {
         this.empid = empid;
@@ -73,6 +73,26 @@ class Employee {
                         .sorted(Comparator.reverseOrder())
                         .skip(1)
                         .findFirst()
+            )
+        ));
+
+```
+
+```java
+Map<String, Optional<Double>> secondHighestSalary =
+    employees.stream()
+        .collect(Collectors.groupingBy(
+            Employee::getDepartment,
+            Collectors.mapping(
+                Employee::getSalary,   // must return Double
+                Collectors.collectingAndThen(
+                    Collectors.toList(),     // ✔ downstream collector
+                    list -> list.stream()    // ✔ finisher
+                        .distinct()
+                        .sorted(Comparator.reverseOrder())
+                        .skip(1)
+                        .findFirst()
+                )
             )
         ));
 
