@@ -1,9 +1,16 @@
+⏺️ ➡️ 🟦 🔵 🟢🔴⭕🟠🟣🟥🟧✔️ ☑️ • ‣ → ⁕
+
 # ➡️
 
 ```java
 List<String> names = Arrays.asList("java", "stream", "api", "java", "code");
 
-String result = names.stream() .distinct() .sorted(Comparator.comparingInt (String::length).reversed()).limit(2).collect(Collectors.joining(", "));
+String result = names.stream()
+                     .distinct()
+                     .sorted(Comparator.comparingInt (String::length).reversed())
+                     .limit(2)
+                     .collect(Collectors.joining(", "));
+
 System.out.printIn(result);
 
 ```
@@ -33,6 +40,7 @@ System.out.println(result);
 ```java
   Map.Entry<String, Long> result = employees.stream()
         .filter(emp -> "F".equalsIgnoreCase(emp.getGender()))
+        // .filter(emp -> emp.getGender().equalsIgnoreCase(""Female))
         .collect(Collectors.groupingBy(
                 Employee::getDepartment,
                 Collectors.counting()

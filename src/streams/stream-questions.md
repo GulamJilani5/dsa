@@ -1,10 +1,12 @@
 ⏺️ ➡️ 🟦 🔵 🟢 🔴 ⭕🟠🟣🟥🟧✔️ ☑️ • ‣ → ⁕
 
-## ➡️ 1. You are given a list of employees, where each employee has a name, department, and salary.
+## ➡️ Find the second highest salary of Employee table
 
-## ➡️ 2. Write two entity classes (Employee, Department) and a lambda to group employees by department with empty lists for unmatched departments
+## ➡️ You are given a list of employees, where each employee has a name, department, and salary.
 
-## ➡️ 3. “Write a Java Stream API one-liner to remove duplicates, sort by string length (descending), take top 2 elements, and join them with a comma.”
+## ➡️ Write two entity classes (Employee, Department) and a lambda to group employees by department with empty lists for unmatched departments
+
+## ➡️ “Write a Java Stream API one-liner to remove duplicates, sort by string length (descending), take top 2 elements, and join them with a comma.”
 
 ## ➡️ How to group data using Collectors
 
