@@ -39,3 +39,7 @@ Find Answer: `D:\Jilani\learning\dsa\src\streams\stream-codings\stream-coding_1.
 # ➡️ Highest Paid Employee per Department (Employee Object)
 
 - Find Answer `D:\Jilani\learning\dsa\src\streams\stream-codings\stream-coding_2.md`
+
+# ➡️ Write a Java program using Streams to find the second highest word length in the sentence.
+
+- Find Answer `D:\Jilani\learning\dsa\src\streams\stream-codings\stream-coding_3.md`
