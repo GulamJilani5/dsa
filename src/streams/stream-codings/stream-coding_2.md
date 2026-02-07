@@ -109,3 +109,46 @@ Map<String, Optional<Double>> secondHighestSalary =
 
         System.out.println(avgSalaryByDept);
 ```
+
+# ➡️ Highest Paid Employee per Department (Employee Object)
+
+```java
+Map<String, Optional<Employee>> highestPaidEmployeePerDept =
+    employees.stream()
+        .collect(Collectors.groupingBy(
+            Employee::getDepartment,
+            Collectors.maxBy(
+                Comparator.comparing(Employee::getSalary)
+            )
+        ));
+
+```
+
+- If Multiple Employees Can Have Same Highest Salary
+
+```java
+Map<String, List<Employee>> highestPaidEmployeesPerDept =
+    employees.stream()
+        .collect(Collectors.groupingBy(
+            Employee::getDepartment,
+            Collectors.collectingAndThen(
+                Collectors.toList(),
+                list -> {
+                    int maxSalary = list.stream()
+                            .mapToInt(Employee::getSalary)
+                            .max()
+                            .orElse(0);
+
+                    return list.stream()
+                            .filter(e -> e.getSalary() == maxSalary)
+                            .collect(Collectors.toList());
+                }
+        )));
+
+```
+
+```java
+
+```
+
+# ➡️

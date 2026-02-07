@@ -35,3 +35,7 @@ Find Answer: `D:\Jilani\learning\dsa\src\streams\stream-codings\stream-coding_1.
 ## ➡️ How to group data using Collectors
 
 ## ➡️ How to handle optional and null values in stream pipelines
+
+# ➡️ Highest Paid Employee per Department (Employee Object)
+
+- Find Answer `D:\Jilani\learning\dsa\src\streams\stream-codings\stream-coding_2.md`
