@@ -8,20 +8,32 @@
 import java.util.*;
 import java.util.stream.*;
 
-public class SecondHighestWordLength {
+class Main {
     public static void main(String[] args) {
+        String sentence = "going to Mumbai for purchasing beautiful clothes";
 
-        String sentence = "Java streams are very powerful and useful";
+        int secondHighestWordlength = findSecondHighestWordLength(sentence);
 
-        int secondHighestLength = Arrays.stream(sentence.split("\\s+"))
-                .map(String::length)
-                .distinct()
-                .sorted(Comparator.reverseOrder())
-                .skip(1)
-                .findFirst()
-                .orElse(-1);
+        System.out.println("Second highest word's length: " +secondHighestWordlength);
+    }
 
-        System.out.println("Second Highest Word Length: " + secondHighestLength);
+    public static int findSecondHighestWordLength(String sentence){
+
+        // List<String> wordList = Arrays.stream(sentence.split("\\s+"))
+        //                               .collect(Collectors.toList())
+        //  wordList.forEach(word -> System.out.print(word + " "));
+
+        int secondHighestWordlength = Arrays.stream(sentence.split("\\s+"))
+                                      .map(String::toLowerCase)
+                                      .map(String::length)
+                                      .distinct()
+                                      .sorted(Comparator.reverseOrder())
+                                      .skip(1)
+                                      .findFirst()
+                                      .orElse(0);
+
+        return secondHighestWordlength;
+
     }
 }
 
