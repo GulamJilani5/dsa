@@ -89,6 +89,7 @@ class Main {
         List<String> sentence = List.of("java", "python", "javascript", "C", "go");
 
         int longestWordLength = sentence.stream()
+                // .map(String::length)
                 .map(word -> word.length())
                 // .max(Integer::compareTo)
                 .max((a, b) -> a.compareTo(b))
@@ -113,6 +114,7 @@ class Main {
 
         int longestWordLength = sentence.stream()
                 .map(String::length)
+                //.map(word -> word.length())
                 .sorted(Comparator.reverseOrder())
                 .findFirst()
                 .orElse(0);
@@ -136,6 +138,7 @@ class Main {
 
         int longestWordLength = sentence.stream()
                 .mapToInt(String::length)
+                // .mapToInt(word -> word.length())
                 .max()
                 .orElse(0);
 
@@ -161,6 +164,7 @@ class Main {
         int longestWordLength = sentence.stream()
                 .collect(Collectors.groupingBy(
                       String::length,
+                      //.map(word -> word.length())
                       Collectors.counting()
                     ))
                     .keySet()
@@ -189,6 +193,7 @@ class Main {
                 .collect(Collectors.groupingBy(
                       word -> word,
                       Collectors.summingInt(String::length)
+                      // Collectors.summingInt(word -> word.length())
                     ))
                     .values()
                     .stream()
@@ -214,6 +219,7 @@ class Main {
 
         int longestWordLength = sentence.stream()
                 .map(String::length)
+                ////.map(word -> word.length())
                 .reduce(0, Integer::max);
 
         System.out.println(longestWordLength);
@@ -248,7 +254,7 @@ class Main {
         int secondHighestWordlength = Arrays.stream(sentence.split("\\s+"))
                                       .map(String::toLowerCase)
                                     //   .map(String::length)
-                                      ..map(word -> word.length())
+                                      .map(word -> word.length())
                                       .distinct()
                                       .sorted(Comparator.reverseOrder())
                                       .skip(1)
@@ -275,6 +281,7 @@ public class SecondHighestWordLength {
 
         int secondHighestLength = Arrays.stream(sentence.split("\\s+"))
                 .collect(Collectors.groupingBy(String::length))   // group by length
+                .collect(Collectors.groupingBy(word -> word.length()))   // group by length
                 .keySet()                                         // take only lengths
                 .stream()
                 .sorted(Comparator.reverseOrder())                // sort desc
