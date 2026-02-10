@@ -128,3 +128,19 @@ Comparator<Employee> cmp =
                   );
 
 ```
+
+# ➡️ comparing() vs comparingInt()
+
+## 🟦 comparing(Key)
+
+- When **Key** is Object/non-primitive.
+- Best for `String`, `LocalDate`, `custom objects`
+- Boxing (int → Integer)
+- slightly slower
+-
+
+## 🟦 comparingInt()/comparingLong()/comparingDouble()
+
+- When **Key** is primitive(int/long/double)
+- no boxing
+- Best for `int/double` fields like `age`, `salary`
