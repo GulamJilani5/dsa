@@ -1,6 +1,6 @@
 ⏺️ ➡️ 🟦 🔵 🟢🔴⭕🟠🟣🟥🟧✔️ ☑️ • ‣ → ⁕
 
-# ️ ➡️20 DSA questions before every major interview
+# ️ ➡️ 20 DSA questions before every major interview
 
       Helped to clear DSA rounds at Google, PayPal, Walmart, Amazon & more
 
