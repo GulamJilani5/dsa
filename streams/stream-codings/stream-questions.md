@@ -47,3 +47,7 @@ Find Answer: `D:\Jilani\learning\dsa\src\streams\stream-codings\stream-coding_1.
 # ➡️ Write a Java program using Streams to find the highest word by length and highest word length in the sentence.
 
 - Find Answer `D:\Jilani\learning\dsa\src\streams\stream-codings\stream-coding_3.md`
+
+# ➡️ capitalize the first character of every word
+
+- Find Answer `D:\Jilani\learning\dsa\src\streams\stream-codings\stream-coding_3.md`

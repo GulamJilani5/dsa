@@ -295,9 +295,47 @@ public class SecondHighestWordLength {
 
 ```
 
-### ➡️
+### ➡️ capitalize the first character of every word
+
+##### 🟦 Get the answer in the List of string and then print it
 
 ```java
+import java.util.*;
+
+class Main {
+    public static void main(String[] args) {
+        System.out.println("Try programiz.pro");
+
+        String str = "I am going to Mumbai";
+
+        // List<String> strList = Arrays.stream(str.split(" "))
+        List<String> strList = Arrays.stream(str.split("\\s+"))
+                                   .map( word -> String.valueOf(Character.toUpperCase(word.charAt(0))) + word.substring(1))
+                                   .toList();
+
+                strList.forEach(word->System.out.println(word));
+    }
+}
+```
+
+##### 🟦 Get the answer in the string format
+
+```java
+import java.util.*;
+import java.util.stream.Collectors;
+
+class Main {
+    public static void main(String[] args) {
+
+        String str = "I am going to Mumbai";
+
+        String result = Arrays.stream(str.split("\\s+"))
+                .map(word -> Character.toUpperCase(word.charAt(0)) + word.substring(1))
+                .collect(Collectors.joining(" "));
+
+        System.out.println(result);
+    }
+}
 
 ```
 
