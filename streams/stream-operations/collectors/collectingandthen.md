@@ -6,7 +6,7 @@
   - First collect elements using some collector
   - THEN apply a finishing function on the collected result
     - finisher function will transform the final collected result into something else
-- 🔴 Can we inside `.collect()` or as a downstream collector inside `groupingBy()` etc...
+- 🔴 We can keep inside `.collect()` or as a downstream collector inside `groupingBy()` etc...
 
 ## ➡️ Why was collectingAndThen introduced?
 
