@@ -35,7 +35,8 @@ employees.stream()
 
 ## ➡️ Arguments
 
-- 2 arguments only
+- It always requires 2 arguments
+- Can not take 1 argument only.
 
 ### 🟦 mapper
 
@@ -105,6 +106,61 @@ groupingBy(Employee::getDepartment,
 
 ## ➡️ Practical examples (must know)
 
+- Employee Class
+
+```java
+class Employee {
+    private String name;
+    private String department;
+    private double salary;
+
+    public Employee(String name, String department, double salary) {
+        this.name = name;
+        this.department = department;
+        this.salary = salary;
+    }
+
+    public String getName() {
+        return name;
+    }
+
+    public String getDepartment() {
+        return department;
+    }
+
+    public double getSalary() {
+        return salary;
+    }
+}
+
+```
+
+- mapping code goes here
+
+```java
+import java.util.*;
+import java.util.stream.*;
+
+public class Main {
+    public static void main(String[] args) {
+
+        List<Employee> employees = List.of(
+        new Employee("Ali", "IT", 50000),
+        new Employee("John", "IT", 70000),
+        new Employee("Sara", "HR", 60000),
+        new Employee("Zara", "HR", 60000),
+        new Employee("Mike", "Finance", 80000)
+
+);
+
+    /////////**************
+    /// Following Code Goes here
+    /////////**************
+    ///
+    }
+}
+```
+
 ### 🟦 Group employees by department, collect their names
 
 ```java
@@ -114,6 +170,14 @@ Map<String, List<String>> map =
             Employee::getDepartment,
             Collectors.mapping(Employee::getName, Collectors.toList())
         ));
+
+// Output
+{
+  Finance=[Mike],
+  HR=[Sara, Zara],
+  IT=[Ali, John]
+}
+
 ```
 
 - Return type:
@@ -129,6 +193,14 @@ Map<String, Set<Double>> map =
             Employee::getDepartment,
             Collectors.mapping(Employee::getSalary, Collectors.toSet())
         ));
+
+// Output
+{
+  Finance=[80000.0],
+  HR=[60000.0],
+  IT=[50000.0, 70000.0]
+}
+// Notice: HR has only one value 60000.0 because Set removes duplicates.
 ```
 
 - Return type:
@@ -143,6 +215,13 @@ Map<String, String> map =
             Employee::getDepartment,
             Collectors.mapping(Employee::getName, Collectors.joining(", "))
         ));
+// Output:
+{
+  Finance=Mike,
+  HR=Sara, Zara,
+  IT=Ali, John
+}
+
 ```
 
 - Return type:
@@ -158,9 +237,69 @@ Map<String, Long> map =
             Employee::getDepartment,
             Collectors.mapping(e -> 1, Collectors.counting())
         ));
+// Output
+{
+  Finance=1,
+  HR=2,
+  IT=2
+}
 ```
 
+- Here mapping `e -> 1` is useless, because `counting()` counts elements anyway.
+  You could simply do:
+
+Collectors.counting()
+
 ## ➡️ Where mapping is MOST used (important patterns)
+
+- Employee Class
+
+```java
+class Employee {
+    private String name;
+    private String department;
+
+    public Employee(String name, String department) {
+        this.name = name;
+        this.department = department;
+    }
+
+    public String getName() {
+        return name;
+    }
+
+    public String getDepartment() {
+        return department;
+    }
+}
+
+```
+
+- mapping code goes here
+
+```java
+import java.util.*;
+import java.util.stream.*;
+
+public class Main {
+    public static void main(String[] args) {
+
+        List<Employee> employees = List.of(
+                new Employee("Ali", "IT"),
+                new Employee("Sara", "HR"),
+                new Employee("John", "IT"),
+                new Employee("Zara", "HR"),
+                new Employee("Mike", "Finance")
+        );
+
+    /////////**************
+    /// Following Code Goes here
+    /////////**************
+    ///
+    }
+}
+
+```
 
 ### 🟦 groupingBy + mapping
 
