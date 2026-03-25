@@ -1,45 +1,14 @@
 ⏺️ ➡️ 🟦 🔵 🟢🔴⭕🟠🟣🟥🟧✔️ ☑️ • ‣ → ⁕
 
-# ➡️ Find the second highest salary of employee table.
+# ⏺️ Second Highest Salary in the Employee table
+
+- Employee Class
 
 ```java
-
-import java.util.*;
-import java.util.List;
-import java.util.Comparator;
-import java.util.Optional;
-
-class Main {
-
-    public static void main(String[] args) {
-
-        System.out.println("Try programiz.pro");
-
-        // Immutable list using List.of()
-
-        List<Employee> employeeList = List.of(
-            new Employee(101, "Alice Johnson", 75000, "Engineering"),
-            new Employee(102, "Bob Smith", 68000, "Marketing"),
-            new Employee(103, "Carol Lee", 82000, "Engineering"),
-            new Employee(104, "David Brown", 55000, "HR")
-        );
-
-        int secondHighestSalary = employeeList.stream()
-                                    .map(Employee::getSalary)
-                                    .distinct()
-                                    .sorted(Comparator.reverseOrder())
-                                    .skip(1)
-                                    .findFirst()
-                                    .orElse(0);
-
-        System.out.println(" Second highest salary: " + secondHighestSalary);
-    }
-}
-
 class Employee {
     int empid;
     String name;
-    int salary;      // Using int for simplicity (common in interviews but in real project it should be double)
+    double salary;      // Using int for simplicity (common in interviews but in real project it should be double)
     String department;
     public Employee(int empid, String name, int salary, String department) {
         this.empid = empid;
@@ -57,26 +26,60 @@ class Employee {
 }
 ```
 
-# ➡️ How to find the second highest salary from each group using Java 8 Streams?
+- Main class where our code goes
+
+```java
+import java.util.*;
+import java.util.List;
+import java.util.Comparator;
+import java.util.Optional;
+
+class Main {
+
+    public static void main(String[] args) {
+
+        System.out.println("Try programiz.pro");
+
+        // Immutable list using List.of()
+
+        List<Employee> employeeList = List.of(
+            new Employee(101, "Alice Johnson", 75000, "Engineering"),
+            new Employee(102, "Bob Smith", 68000, "Marketing"),
+            new Employee(103, "Carol Lee", 90000, "Engineering"),
+            new Employee(103, "Carol Lee", 80000, "Engineering"),
+            new Employee(104, "David Brown", 50000, "HR")
+            new Employee(104, "David Brown", 60000, "HR")
+        );
+
+       /*****************
+       ********
+       **** Code Logic Goes Here
+       ********
+       *****************/
+    }
+}
+
+```
+
+### ➡️ Find the second highest salary of Employee table
+
+```java
+ int secondHighestSalary = employeeList.stream()
+                                .map(Employee::getSalary)
+                                .distinct()
+                                .sorted(Comparator.reverseOrder())
+                                .skip(1)
+                                .findFirst()
+                                .orElse(0);
+
+        System.out.println(" Second highest salary: " + secondHighestSalary);
+```
+
+### ➡️ How to find the second highest salary per department using Java 8 Streams?
 
 - Employees grouped by department. Find the second highest salary in each department
 
-```java
- Map<String, Optional<Integer>> secondHighestSalary =
-    employees.stream()
-        .collect(Collectors.groupingBy(
-            Employee::getDepartment,
-            Collectors.collectingAndThen(
-                Collectors.mapping(Employee::getSalary, Collectors.toList()),
-                salaries -> salaries.stream()
-                        .distinct()
-                        .sorted(Comparator.reverseOrder())
-                        .skip(1)
-                        .findFirst()
-            )
-        ));
-
-```
+- **Returning Optional double**
 
 ```java
 Map<String, Optional<Double>> secondHighestSalary =
@@ -87,7 +90,7 @@ Map<String, Optional<Double>> secondHighestSalary =
                 Employee::getSalary,   // must return Double
                 Collectors.collectingAndThen(
                     Collectors.toList(),     // ✔ downstream collector
-                    list -> list.stream()    // ✔ finisher
+                    list -> list.stream()    // ✔ finisher function
                         .distinct()
                         .sorted(Comparator.reverseOrder())
                         .skip(1)
@@ -95,6 +98,48 @@ Map<String, Optional<Double>> secondHighestSalary =
                 )
             )
         ));
+
+```
+
+- **Returning directly double no optional**
+
+```java
+Map<String, Double> secondHighestSalaryByDept =
+        employees.stream()
+                .collect(Collectors.groupingBy(
+                        Employee::getDepartment,
+                        Collectors.mapping(
+                                Employee::getSalary,  // mapper for mapping()
+                                Collectors.collectingAndThen(  // downstream collector for mapping()
+                                        Collectors.toList(),   // ✔ downstream collector for collectingAndThen()
+                                        list -> list.stream()  // ✔ finisher function for collectingAndThen()
+                                                .distinct()
+                                                .sorted(Comparator.reverseOrder())
+                                                .skip(1)
+                                                .findFirst()
+                                                .orElse(null)
+                                )
+                        )
+                ));
+
+```
+
+- In my notes I am haivng this code, I am having `Collectors.mapping()` inside `Collectors.collectingAndThen()`
+
+```java
+Map<String, Optional<Double>> map =
+        employees.stream()
+                .collect(Collectors.groupingBy(
+                        Employee::getDepartment,
+                        Collectors.collectingAndThen(
+                                Collectors.mapping(Employee::getSalary, Collectors.toList()), // mapping(mapper, Downstream Collector)// ✔ downstream collector for collectingAndThen()
+                                salaries -> salaries.stream() // ✔ finisher function for collectingAndThen()
+                                        .distinct()
+                                        .sorted(Comparator.reverseOrder())
+                                        .skip(1)
+                                        .findFirst()
+                        )
+                ));
 
 ```
 

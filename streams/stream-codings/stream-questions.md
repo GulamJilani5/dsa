@@ -4,11 +4,7 @@
 
 - Find Answer `D:\Jilani\learning\dsa\src\streams\stream-codings\stream-coding_2.md`
 
-## ➡️ How to find the second highest salary from each group using Java 8 Streams?
-
-- Find Answer `D:\Jilani\learning\dsa\src\streams\stream-codings\stream-coding_2.md`
-
-## ➡️ How to find the average salary from each department using Java 8 Streams?
+## ➡️ How to find the second highest salary per department using Java 8 Streams?
 
 - Find Answer `D:\Jilani\learning\dsa\src\streams\stream-codings\stream-coding_2.md`
 
