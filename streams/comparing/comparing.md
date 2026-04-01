@@ -11,6 +11,7 @@ Use Comparable when a single natural order makes sense (e.g., **String**, **Inte
 
 Use Comparator when you need:
 
+- compare()
 - Derived keys (`comparingInt`, `comparingDouble`, `comparing`)
 - Multiple fields (`thenComparing()`)
 - Reverse of your custom rule (`.reversed()`)
@@ -23,7 +24,7 @@ Use Comparator when you need:
 ### 🟦 compareTo()
 
 - Instance method, Belongs to the object
-- Comes from Comparable interface
+- Define in Comparable interface
 - Called like this: `a.compareTo(b)`
 
 ```java
@@ -36,7 +37,7 @@ Use Comparator when you need:
 .max((a, b) -> a.compareTo(b)) //Lambda Expression
 ```
 
-### 🟦 compare()
+### 🟦 static compare() (Wrapper Classes)
 
 - Static method, Belongs to the class
 - Called like this:
@@ -58,3 +59,8 @@ String.compare(a, b)   // Java 11+
 .max((a, b) -> String.compare(a, b))  // lambda
 
 ```
+
+### 🟦 Non-static compare() (Comparator)
+
+- Instance method
+- Belongs to Comparator object
