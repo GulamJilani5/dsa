@@ -2,10 +2,11 @@
 
 # ️ ➡️ Integer/Double Comparable
 
+List<Integer> nums = List.of(10, 50, 20, 5);
+
 ## 🟦 Natural Order (Ascending)
 
 ```java
-List<Integer> nums = List.of(10, 50, 20, 5);
 
 nums.stream()
     .sorted()
@@ -31,7 +32,7 @@ System.out.println(Collections.max(nums)); // 50
 
 ```
 
-#### 🔵 using **.compareTo()**
+##### 🔵 using **.compareTo()**
 
 - Method Reference
 
@@ -87,7 +88,7 @@ System.out.println(Collections.min(names)); // Ali
 System.out.println(Collections.max(names)); // Zara
 ```
 
-#### 🔵 Using **.compareTo()**
+##### 🔵 Using **.compareTo()**
 
 - Method Reference
 
@@ -162,7 +163,7 @@ System.out.println(Collections.min(dates)); // 2023-12-25
 System.out.println(Collections.max(dates)); // 2025-01-01
 ```
 
-#### 🔵 Using **.compareTo()**
+##### 🔵 Using **.compareTo()**
 
 - Method Reference
 
