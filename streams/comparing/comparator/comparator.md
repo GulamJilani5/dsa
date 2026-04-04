@@ -4,8 +4,9 @@
 
 ## 🟦 Sort String by length (ASC)
 
+List<String> words = List.of("java", "python", "javascript", "go", "c");
+
 ```java
- List<String> words = List.of("java", "python", "javascript", "go", "c");
 
  words.stream()
              .sorted(Comparator.comparingInt(String::length)) // Method Reference

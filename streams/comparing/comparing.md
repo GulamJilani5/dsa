@@ -4,7 +4,7 @@
 
 Use Comparable when a single natural order makes sense (e.g., **String**, **Integer**, **LocalDate**, or your class manually defines `compareTo`) or implements `class Product implements Comparable<Class>`.
 
-- **Integer**, **Double**, **Long**, **String** and **LocalDate** are having inbuilt `compareTo` - natural order like simply `sorted()` or `comparator.naturalOrder()`
+- **Integer**, **Double**, **Long**, **String** and **LocalDate** are having inbuilt `compareTo` natural order like simply `sorted()` or `comparator.naturalOrder()`
 - for reverse order `.sorted(Comparator.reverseOrder())`
 
 # ➡️ Comparator
