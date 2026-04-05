@@ -213,6 +213,74 @@ public String minWindow(String s, String t) {
 
 # ⏺️ Count Occurrences of Anagrams
 
+### ➡️ Using HashMap
+
+```java
+public static int countAnagrams() {
+    String s = "abcab";
+    String p = "ab";
+
+    Map<Character, Integer> map = new HashMap<>();
+
+    // Step 1: build frequency map
+    for (char c : p.toCharArray()) {
+        map.put(c, map.getOrDefault(c, 0) + 1);
+    }
+
+    int left = 0, right = 0;
+    int count = p.length();
+    int result = 0;
+
+    while (right < s.length()) {
+        char ch = s.charAt(right);
+
+        // TAKE (right)
+        if (map.containsKey(ch)) {
+            if (map.get(ch) > 0) count--;
+            map.put(ch, map.get(ch) - 1);
+        }
+
+        right++;
+
+        // MATCH
+        if (count == 0) result++;
+
+        // REMOVE (left)
+        if (right - left == p.length()) {
+            char leftChar = s.charAt(left);
+
+            if (map.containsKey(leftChar)) {
+                if (map.get(leftChar) >= 0) count++;
+                map.put(leftChar, map.get(leftChar) + 1);
+            }
+
+            left++;
+        }
+    }
+
+    return result;
+}
+```
+
+### ➡️ Using Character Counting through Hashing
+
+- c(character) - 'a'
+
+```
+'a' → ASCII 97 → index 0
+'b' → ASCII 98 → index 1
+'c' → ASCII 99 → index 2
+```
+
+- p = "aab"
+
+```
+freq:
+a → 2
+b → 1
+others(rest of the character) → 0
+```
+
 - Count how many substrings of string s are anagrams of string p
 - Tests frequency array + fixed window
 - Common in service-based companies
