@@ -1,8 +1,56 @@
 ⏺️ ➡️ 🟦 🔵 🟢🔴⭕🟠🟣🟥🟧✔️ ☑️ • ‣ → ⁕
 
-# ⏺️ Placing all the zeros to the end
+# ⏺️ Placing all the zeros to the end & Pair Sum Zero & Two Sum Pointer
 
-### ➡️ using while loop
+### ➡️ Two Sum Pointer
+
+```java
+ public int[] twoSum(int[] arr, int target) {
+        int left = 0;
+        int right = arr.length - 1;
+
+        while (left < right) {
+            int sum = arr[left] + arr[right];
+
+            if (sum == target) {
+                return new int[] { left, right }; // 0-based index
+            } else if (sum < target) {
+                left++;
+            } else {
+                right--;
+            }
+        }
+
+        return new int[] { -1, -1 }; // no valid pair found
+    }
+```
+
+### ➡️ Pair Sum Zero
+
+```java
+public static int[] findSumZeroPair(int[] arr) {
+        int left = 0;
+        int right = arr.length - 1;
+
+        while (left < right) {
+            int sum = arr[left] + arr[right];
+
+            if (sum == 0) {
+                return new int[] { arr[left], arr[right] };
+            } else if (sum > 0) {
+                right--;
+            } else {
+                left++;
+            }
+        }
+
+        return null; // No pair found
+    }
+```
+
+### ➡️ Placing all the zeros to the end
+
+##### 🟦 Method 1
 
 ```java
 
@@ -38,7 +86,7 @@ class Main {
 }
 ```
 
-### ➡️
+##### 🟦 Method 2
 
 ```java
 
@@ -74,7 +122,7 @@ class Main {
 }
 ```
 
-### ➡️ Using for...loop
+##### 🟦 Method 3 - Using for...loop
 
 ```java
 
@@ -99,62 +147,6 @@ class Main {
             System.out.print(arr[k]+" ");
         }
 
-    }
-}
-```
-
-# ⏺️ Reverse the Array
-
-```java
-
-class Main {
-    public static void main(String[] args) {
-
-       int[] arr = {2, 5, 3, 1, 4};
-
-       int left= 0;
-       int right= arr.length - 1;
-
-       while(left < right){
-           int temp = arr[left];
-          arr[left] = arr[right];
-          arr[right] = temp;
-
-          left++;
-          right--;
-       }
-
-       for(int i = 0; i < arr.length; i++){
-           System.out.println(arr[i]);
-       }
-
-    }
-}
-```
-
-# ⏺️ Reverse the String Character
-
-```java
-
-class Main {
-    public static void main(String[] args) {
-        String str = "dream";
-
-        char[] charArray = str.toCharArray();
-        int left = 0;
-        int right = charArray.length - 1;
-        while(left < right){
-           char c = charArray[left];
-           charArray[left] = charArray[right];
-           charArray[right] = c;
-
-           left++;
-           right--;
-        }
-
-        for(int i = 0; i < charArray.length; i++){
-            System.out.println(charArray[i]);
-        }
     }
 }
 ```
