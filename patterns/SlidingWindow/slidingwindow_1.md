@@ -88,6 +88,20 @@ public double findMaxAverageSlidingWindow(int[] nums, int k) {
 ### ➡️ Using HashSet
 
 - Tests variable window + HashSet/Map
+- UNDERSTANDING FLOW
+
+```text
+1. Expand window (right++)
+2. Check if current character is already in set:
+    - if YES:
+        → remove s[left] from set
+        → left++ (shrink window)
+        → repeat until duplicate removed
+
+3. Add current character to set
+
+4. Update max length (right - left + 1)
+```
 
 ```java
 
@@ -118,6 +132,19 @@ public double findMaxAverageSlidingWindow(int[] nums, int k) {
 
 ### ➡️ Using HashMap
 
+- UNDERSTANDING FLOW
+
+```text
+1. Expand window (right++)
+2. Check if current character already exists in map:
+    - if YES:
+        → move left = Math.max(left, lastIndex + 1)
+
+3. Update map with current character's latest index
+
+4. Update max length (right - left + 1)
+```
+
 ```java
 import java.util.*;
 
@@ -139,6 +166,8 @@ public class Main {
             // If duplicate found, move left pointer
             if (map.containsKey(current)) {
                 left = Math.max(left, map.get(current) + 1);
+                // map.get(current)  - will be the repeated values index(already exist values index)
+                // So move the left counter to the one index ahead of the already exist value.
             }
 
             // Update latest index of character
@@ -188,6 +217,20 @@ public class Main {
 
 - Find longest substring containing at most K distinct characters
 - Tests HashMap frequency + window shrink logic
+- Flow
+
+```text
+1. Expand window (right++)
+2. Add current character to map (increase frequency)
+
+3. While distinct characters > k:
+    - take left character
+    - decrease its frequency
+    - if frequency becomes 0 → remove from map
+    - move left++ (shrink window)
+
+4. Update max length (right - left + 1)
+```
 
 ```java
 public int longestKDistinct(String s, int k) {
