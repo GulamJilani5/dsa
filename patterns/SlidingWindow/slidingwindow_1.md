@@ -83,15 +83,16 @@ public double findMaxAverageSlidingWindow(int[] nums, int k) {
     }
 ```
 
-# ⏺️ Longest Substring Without Repeating Characters
+# ⏺️ Length of Longest Substring Without Repeating Characters
 
-### ➡️ HashSet technique
+### ➡️ Using HashSet
 
 - Tests variable window + HashSet/Map
 
 ```java
 
-    public int lengthOfLongestSubstringSlidingWindow_method1(String str) {
+    public int lengthOfLongestSubstring() {
+        String str = "abcbbd";
         int n = str.length();
         HashSet<Character> seen = new HashSet<>(); // Store characters in the current window
         int maxLength = 0;
@@ -104,15 +105,55 @@ public double findMaxAverageSlidingWindow(int[] nums, int k) {
                 seen.remove(str.charAt(left));
                 left++;
             }
+
             // Add current character to window and update max length
             seen.add(str.charAt(right));
             maxLength = Math.max(maxLength, right - left + 1);
         }
+
         return maxLength;
     }
+
 ```
 
-### ➡️ Sliding Window technique.
+### ➡️ Using HashMap
+
+```java
+import java.util.*;
+
+public class Main {
+    public static void main(String[] args) {
+        String s = "abcabcbb";
+        System.out.println(lengthOfLongestSubstring(s));
+    }
+
+    public static int lengthOfLongestSubstring(String s) {
+        Map<Character, Integer> map = new HashMap<>();
+
+        int left = 0;
+        int maxLength = 0;
+
+        for (int right = 0; right < s.length(); right++) {
+            char current = s.charAt(right);
+
+            // If duplicate found, move left pointer
+            if (map.containsKey(current)) {
+                left = Math.max(left, map.get(current) + 1);
+            }
+
+            // Update latest index of character
+            map.put(current, right);
+
+            // Calculate max length
+            maxLength = Math.max(maxLength, right - left + 1);
+        }
+
+        return maxLength;
+    }
+}
+```
+
+### ➡️ Using ASCII character frequency array
 
 - Input: `"abcabcbb"`
 - Output: `3`

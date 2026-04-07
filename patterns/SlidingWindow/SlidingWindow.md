@@ -13,11 +13,11 @@
 - ###### 🔵 Finding the Maximu m Average of subarrays of the size k
   - Find `D:\Jilani\learning\dsa\src\patterns\SlidingWindow\SlidingWindowMaxSum.java`
 
-##### 🟦 Longest substring with K distinct characters.
+##### 🟦 Length Of Longest substring with K distinct characters.
 
 - Find `D:\Jilani\learning\dsa\patterns\SlidingWindow\slidingwindow_1.md`
 
-##### 🟦 Longest Substring Without Repeating Characters
+##### 🟦 Length Of Longest Substring Without Repeating Characters
 
 - Asked in **LtiMindtree** 🔴
 - Find `D:\Jilani\learning\dsa\patterns\SlidingWindow\slidingwindow_1.md`
