@@ -299,6 +299,39 @@ public String minWindow(String s, String t) {
 
 ### ➡️ Using HashMap
 
+- UNDERSTANDING FLOW
+
+```text
+1. Create frequency map of pattern (p)
+
+2. Initialize:
+    left = 0
+    count = number of unique characters in map
+    window size = p.length()
+
+3. Expand window (right++)
+
+4. For current character:
+    - if exists in map:
+        → decrease its frequency
+        → if frequency becomes 0 → count--
+
+5. If window size < k → continue expanding
+
+6. If window size == k:
+    - if count == 0 → found anagram → increment result
+
+    - before moving forward:
+        → check left character:
+            if exists in map:
+                → increase its frequency
+                → if frequency becomes 1 → count++
+
+        → move left++ (slide window)
+
+7. Repeat till end
+```
+
 ```java
 public static int countAnagrams() {
     String s = "abcab";
