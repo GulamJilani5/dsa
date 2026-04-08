@@ -4,6 +4,8 @@
 
 ## ➡️ Strings
 
+#### 🟦 find the vowels in a given string
+
 #### 🟦 Given a string consisting of consecutive repeating characters, compress the string by replacing each group of repeated characters with:
 
 - Yash Technology 🔴
@@ -42,19 +44,13 @@ Find Answer: `D:\Jilani\learning\dsa\src\streams\stream-codings\stream-coding_1.
 
 #### 🟦 Write two entity classes (Employee, Department) and a lambda to group employees by department with empty lists for unmatched departments
 
-# ➡️ Given a string consisting of consecutive repeating characters, compress the string by replacing each group of repeated characters with:
-
-```java
-Input: "AAABBACCDDBBA"
-Output: A3B2A1C2D2B2A1
-
-```
-
-Find Answer: `D:\Jilani\learning\dsa\src\streams\stream-codings\stream-coding_1.md`
-
 #### 🟦 Highest Paid Employee per Department (Employee Object)
 
 - Find Answer `D:\Jilani\learning\dsa\src\streams\stream-codings\stream-coding_2.md`
+
+## ➡️ Numbers
+
+#### 🟦 Find unique, duplicate and distinct elements in a array of integer elements
 
 ## ➡️ Others
 
