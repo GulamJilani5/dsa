@@ -34,7 +34,7 @@ System.out.println(map);
 ## ➡️ groupingBy(classifier, downstreamCollector)
 
 - **2 Arguments:**
-  - `classifier`
+  - `classifier` (Function.identity() or x->x)
   - `downstream collector` (like counting(), summingInt(), mapping(), etc.)
 - return type
   - Collector<T, ?, Map<K, D>>
