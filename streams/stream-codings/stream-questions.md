@@ -10,6 +10,10 @@
 
 - Yash Technology 🔴
 
+#### 🟦 find the first non-repeating (unique) character and its index
+
+- TCS & Capegemini
+
 ## ➡️ Arrays/List
 
 #### 🟦 “Write a Java Stream API one-liner to remove duplicates, sort by string length (descending), take top 2 elements, and join them with a comma.”
