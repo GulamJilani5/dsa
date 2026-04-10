@@ -4,13 +4,17 @@
 
 ## ➡️ Strings
 
-#### 🟦 find the vowels in a given string
+#### 🟦 Find the vowels in a given string
+
+- Find `D:\Jilani\learning\dsa\streams\stream-codings\string\answer-2.md`
 
 #### 🟦 Given a string consisting of consecutive repeating characters, compress the string by replacing each group of repeated characters with:
 
 - Yash Technology 🔴
 
-#### 🟦 find the first non-repeating (unique) character and its index
+#### 🟦 Find the first non-repeating (unique) character and its index
+
+- Find `D:\Jilani\learning\dsa\streams\stream-codings\string\answer-2.md`
 
 - TCS & Capegemini
 
@@ -27,6 +31,10 @@ Find Answer: `D:\Jilani\learning\dsa\src\streams\stream-codings\stream-coding_1.
 #### 🟦 Write a Java program using Streams to find the highest word by length and highest word length in the sentence.
 
 - Find Answer `D:\Jilani\learning\dsa\src\streams\stream-codings\stream-coding_3.md`
+
+#### 🟦 Reversing words (not characters) in a string
+
+- Find ``
 
 #### 🟦 capitalize the first character of every word
 
