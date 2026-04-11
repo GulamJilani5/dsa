@@ -301,35 +301,38 @@ public String minWindow(String s, String t) {
 
 - UNDERSTANDING FLOW
 
+3. expanding window until → window size(right) < k
+
 ```text
+
 1. Create frequency map of pattern (p)
 
 2. Initialize:
     left = 0
-    count = number of unique characters in map
+    count = total characters in pattern (p.length())
     window size = p.length()
 
-3. Expand window (right++)
+3. expanding window until → window size(right) < k
 
-4. For current character:
-    - if exists in map:
-        → decrease its frequency
-        → if frequency becomes 0 → count--
+        a. For current character:
+            - if exists in map:
+                → if freq > 0 → count--
+                → decrease frequency
 
-5. If window size < k → continue expanding
+        b.  right++;
 
-6. If window size == k:
-    - if count == 0 → found anagram → increment result
+        c. If count == 0 → found anagram → result++
 
-    - before moving forward:
-        → check left character:
-            if exists in map:
-                → increase its frequency
-                → if frequency becomes 1 → count++
+        d. If window size == p.length():
+            → check left character:
+                if exists in map:
+                    → if freq >= 0 → count++
+                    → increase frequency
+            → move left++
 
-        → move left++ (slide window)
+        d. Repeat till end
+4. return result or print the result
 
-7. Repeat till end
 ```
 
 ```java
@@ -375,7 +378,8 @@ public static int countAnagrams() {
         }
     }
 
-    return result;
+
+
 }
 ```
 
