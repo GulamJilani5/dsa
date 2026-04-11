@@ -100,6 +100,22 @@ class Main {
 
 #### 🟦 Cleaner Stream Version
 
+- Flow
+
+```text
+String
+  ↓ split
+["the","sky","is","blue"]
+  ↓ index stream
+[0,1,2,3]
+  ↓ reverse index mapping
+[3,2,1,0]
+  ↓ map to words
+["blue","is","sky","the"]
+  ↓ join
+"blue is sky the"
+```
+
 ```java
 import java.util.stream.*;
 import java.util.*;
