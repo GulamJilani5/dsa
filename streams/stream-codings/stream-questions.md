@@ -64,6 +64,8 @@ Find Answer: `D:\Jilani\learning\dsa\src\streams\stream-codings\stream-coding_1.
 
 #### 🟦 Find unique, duplicate and distinct elements in a array of integer elements
 
+#### 🟦 Given a array find the unique values
+
 ## ➡️ Others
 
 #### 🟦 How to group data using Collectors

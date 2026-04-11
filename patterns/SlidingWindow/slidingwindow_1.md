@@ -114,14 +114,16 @@ public double findMaxAverageSlidingWindow(int[] nums, int k) {
 
         // Expand window by moving 'right'
         for (int right = 0; right < n; right++) {
+            char current = str.charAt(right);
             // If a duplicate is found, shrink the window from the left
-            while (seen.contains(str.charAt(right))) {
-                seen.remove(str.charAt(left));
+            while (seen.contains(current)) {
+                char leftchar = s.charAt(left);
+                seen.remove(leftchar);
                 left++;
             }
 
             // Add current character to window and update max length
-            seen.add(str.charAt(right));
+            seen.add(current);
             maxLength = Math.max(maxLength, right - left + 1);
         }
 
@@ -140,7 +142,7 @@ public double findMaxAverageSlidingWindow(int[] nums, int k) {
     - if YES:
         → move left = Math.max(left, lastIndex + 1)
 
-3. Update map with current character's latest index
+3. Add(Update) map with current character's latest index
 
 4. Update max length (right - left + 1)
 ```
@@ -150,7 +152,7 @@ import java.util.*;
 
 public class Main {
     public static void main(String[] args) {
-        String s = "abcabcbb";
+        String str = "abcabcbb";
         System.out.println(lengthOfLongestSubstring(s));
     }
 
@@ -160,8 +162,8 @@ public class Main {
         int left = 0;
         int maxLength = 0;
 
-        for (int right = 0; right < s.length(); right++) {
-            char current = s.charAt(right);
+        for (int right = 0; right < str.length(); right++) {
+            char current = str.charAt(right);
 
             // If duplicate found, move left pointer
             if (map.containsKey(current)) {
@@ -233,24 +235,25 @@ public class Main {
 ```
 
 ```java
-public int longestKDistinct(String s, int k) {
+public int longestKDistinct(String str, int k) {
     Map<Character, Integer> map = new HashMap<>();
-    int left = 0, max = 0;
+    int left = 0, maxLength = 0;
 
-    for (int right = 0; right < s.length(); right++) {
-        map.put(s.charAt(right), map.getOrDefault(s.charAt(right), 0) + 1);
+    for (int right = 0; right < str.length(); right++) {
+        char current = str.charAt(right);
+        map.put(current, map.getOrDefault(current, 0) + 1);
 
         while (map.size() > k) {
-            char ch = s.charAt(left);
-            map.put(ch, map.get(ch) - 1);
-            if (map.get(ch) == 0) map.remove(ch);
+            char charleft = str.charAt(left);
+            map.put(charleft, map.get(charleft) - 1);
+            if (map.get(charleft) == 0) map.remove(charleft);
             left++;
         }
 
-        max = Math.max(max, right - left + 1);
+        maxLength = Math.max(maxLength, right - left + 1);
     }
 
-    return max;
+    return maxLength;
 }
 ```
 
