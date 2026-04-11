@@ -301,8 +301,6 @@ public String minWindow(String s, String t) {
 
 - UNDERSTANDING FLOW
 
-3. expanding window until → window size(right) < k
-
 ```text
 
 1. Create frequency map of pattern (p)
