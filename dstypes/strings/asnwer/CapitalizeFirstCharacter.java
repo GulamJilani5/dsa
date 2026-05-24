@@ -1,11 +1,11 @@
-package BasicPrograms.strings.codes;
+package dstypes.strings.asnwer;
 
 import java.util.ArrayList;
 import java.util.List;
 
 public class CapitalizeFirstCharacter {
 
-    //Method 1
+    // Method 1
     public List<String> capitalizeFirst(List<String> arr) {
         // Base Case
         if (arr.isEmpty()) {
@@ -23,22 +23,22 @@ public class CapitalizeFirstCharacter {
     }
 
     /*
-    // Method 2
-    public static List<String> capitalizeWords(List<String> arr) {
-        List<String> finalArr = new ArrayList<>();
-
-        for (String el : arr) {
-            if (!el.isEmpty()) {
-                String firstChar = el.substring(0, 1).toUpperCase();
-                String capitalized = firstChar + el.substring(1);
-                finalArr.add(capitalized);
-            } else {
-                finalArr.add(el); // handle empty string case
-            }
-        }
-
-        return finalArr;
-    }
-
+     * // Method 2
+     * public static List<String> capitalizeWords(List<String> arr) {
+     * List<String> finalArr = new ArrayList<>();
+     * 
+     * for (String el : arr) {
+     * if (!el.isEmpty()) {
+     * String firstChar = el.substring(0, 1).toUpperCase();
+     * String capitalized = firstChar + el.substring(1);
+     * finalArr.add(capitalized);
+     * } else {
+     * finalArr.add(el); // handle empty string case
+     * }
+     * }
+     * 
+     * return finalArr;
+     * }
+     * 
      */
 }

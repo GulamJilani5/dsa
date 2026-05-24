@@ -1,4 +1,4 @@
-package BasicPrograms.strings.codes;
+package dstypes.strings.asnwer;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -17,7 +17,7 @@ public class CollectString {
                     if (value instanceof String) {
                         stringArr.add((String) value);
                     } else if (value instanceof Map) {
-                        //noinspection unchecked
+                        // noinspection unchecked
                         gatherStrings((Map<String, Object>) value);
                     }
                 }
@@ -26,25 +26,24 @@ public class CollectString {
         new Helper().gatherStrings(obj);
         return stringArr;
     }
-        /*
-            // Method 2: Pure Recursion
-            public  List<String> collectStrings(Map<String, Object> obj) {
-                List<String> stringArr = new ArrayList<>();
+    /*
+     * // Method 2: Pure Recursion
+     * public List<String> collectStrings(Map<String, Object> obj) {
+     * List<String> stringArr = new ArrayList<>();
+     * 
+     * for (Map.Entry<String, Object> entry : obj.entrySet()) {
+     * Object value = entry.getValue();
+     * if (value instanceof String) {
+     * stringArr.add((String) value);
+     * } else if (value instanceof Map) {
+     * //noinspection unchecked
+     * stringArr.addAll(collectStrings((Map<String, Object>) value));
+     * }
+     * }
+     * 
+     * return stringArr;
+     * }
+     * 
+     */
 
-                for (Map.Entry<String, Object> entry : obj.entrySet()) {
-                    Object value = entry.getValue();
-                    if (value instanceof String) {
-                        stringArr.add((String) value);
-                    } else if (value instanceof Map) {
-                        //noinspection unchecked
-                        stringArr.addAll(collectStrings((Map<String, Object>) value));
-                    }
-                }
-
-                return stringArr;
-            }
-
-         */
-
-
-    }
+}

@@ -1,4 +1,4 @@
-package BasicPrograms.strings;
+package dstypes.strings.asnwer;
 
 import BasicPrograms.strings.codes.*;
 
@@ -9,25 +9,28 @@ import java.util.Map;
 
 public class StringClass {
 
-    //Capitalize First Character
+    // Capitalize First Character
     CapitalizeFirstCharacter capitalizeFirstCharacter = new CapitalizeFirstCharacter();
-    public void capitalizeFirstCharacterMethod(){
+
+    public void capitalizeFirstCharacterMethod() {
         List<String> words = Arrays.asList("i", "am", "learning", "recursion");
         List<String> results = capitalizeFirstCharacter.capitalizeFirst(words);
-     System.out.println("String - Capitalizing the first character of the list: " +List.of().toArray());
+        System.out.println("String - Capitalizing the first character of the list: " + List.of().toArray());
     }
 
-    //Capitalize Words
+    // Capitalize Words
     CapitalizeWords capitalizeWords = new CapitalizeWords();
-    public void capitalizeWordsMethod(){
+
+    public void capitalizeWordsMethod() {
         List<String> words = Arrays.asList("jilani", "is", "learning", "recursion");
         List<String> results = capitalizeWords.capitalizedWords(words);
         System.out.println("Capitalize words are: " + results);
     }
 
-    //Collect String
+    // Collect String
     CollectString collectString = new CollectString();
-    public void collectStringMethod(){
+
+    public void collectStringMethod() {
         // Create nested object structure
         Map<String, Object> weMadeIt = new HashMap<>();
         weMadeIt.put("weMadeIt", "baz");
@@ -56,49 +59,51 @@ public class StringClass {
         System.out.println("Helper Recursion: " + collectString.collectStrings(obj)); // [foo, bar, baz]
 
         // Test Method 2
-//        System.out.println("Pure Recursion: " + collectString.collectStrings(obj)); // [foo, bar, baz]
+        // System.out.println("Pure Recursion: " + collectString.collectStrings(obj));
+        // // [foo, bar, baz]
     }
 
-    //Count Character
+    // Count Character
     CountCharacter countCharacter = new CountCharacter();
-    public void countCharacterMethod(){
+
+    public void countCharacterMethod() {
         String input = "He  llj   ilanio[]-==";
         Map<Character, Integer> result = countCharacter.charCount(input);
-        System.out.println("String - Counts of each characters are: " +result);
+        System.out.println("String - Counts of each characters are: " + result);
     }
 
     // Substring Search
 
     SubstringSearch substringSearch = new SubstringSearch();
-    public void substringSearchMethod(){
-         //METHOD 1
-//        String longStr = "lon loomg ojhomog";
-//        String shortStr = "omg";
-//        int count = substringSearch.subStringSearch(longStr, shortStr);
-//        System.out.println("String - Count: " + count);
-//    }
 
-    // METHOD 2
+    public void substringSearchMethod() {
+        // METHOD 1
+        // String longStr = "lon loomg ojhomog";
+        // String shortStr = "omg";
+        // int count = substringSearch.subStringSearch(longStr, shortStr);
+        // System.out.println("String - Count: " + count);
+        // }
+
+        // METHOD 2
         String longStr = "lon loomg ojhomog";
         String shortStr = "omg";
         boolean result = substringSearch.subStringSearch(longStr, shortStr);
-        if(result) {
-               System.out.println("String - Substring Found");
-             }
-        else {
-               System.out.println("String - Not found");
+        if (result) {
+            System.out.println("String - Substring Found");
+        } else {
+            System.out.println("String - Not found");
         }
 
-// METHOD 3
-//    String longStr = "lon loomg ojhomog";
-//    String shortStr = "omg";
-//
-//    int index = substringSearch.subStringSearch(longStr, shortStr);
-//        if (index == -1) {
-//        System.out.println("String - Substring Not found");
-//    } else {
-//        System.out.println("String - Substring Found at index: " + index);
-//    }
+        // METHOD 3
+        // String longStr = "lon loomg ojhomog";
+        // String shortStr = "omg";
+        //
+        // int index = substringSearch.subStringSearch(longStr, shortStr);
+        // if (index == -1) {
+        // System.out.println("String - Substring Not found");
+        // } else {
+        // System.out.println("String - Substring Found at index: " + index);
+        // }
 
- }
+    }
 }
