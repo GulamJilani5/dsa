@@ -5,6 +5,7 @@
 ```java
 
     public int[] productExceptSelf(int[] nums) {
+
         int[] left = new int[nums.length];
         int[] right = new int[nums.length];
 
