@@ -9,8 +9,9 @@
 
 ### ➡️ Maximum Product Subarray
 
-- Find ``
+- Find `D:\Jilani\learning\dsa\dstypes\array\answer\product-of-array-except-self.md`
 
 ### ➡️ Product of Array Except Self
 
-- Find ``
+- For every index, return the product of all elements of the array except the current element.
+- Find `D:\Jilani\learning\dsa\dstypes\array\answer\maximum-product-subarray.md`
