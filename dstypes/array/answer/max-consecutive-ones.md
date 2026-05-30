@@ -4,6 +4,7 @@
 
 - It is very much similar to maximum sum subarray(Kadan's algorithm)
 - It is an special case of maximum sum subarray
+- Sliding Window (basic form)
 
 ### ➡️ Method 1
 
