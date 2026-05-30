@@ -1,8 +1,9 @@
 ⏺️ ➡️ 🟦 🔵 🟢🔴⭕🟠🟣🟥🟧✔️ ☑️ • ‣ → ⁕
 
-# ⏺️ Kadan's Algorithm
+# ⏺️ Kadan's Algorithm || Maximum sum subarray
 
 - If Array elements are only positive values then maximum sum array is the sum of the array.
+- We can use this approach to solve the maximum consecutive 1's in an array.
 
 ### ➡️ Method 1
 

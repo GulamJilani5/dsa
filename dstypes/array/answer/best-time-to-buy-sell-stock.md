@@ -10,6 +10,7 @@
 ### ➡️ Method 1
 
 ```java
+
   public int maxProfit() {
 
       int[] prices = {7,1,5,3,6,4};
