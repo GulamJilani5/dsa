@@ -1,18 +1,17 @@
-/*
-Problem Statement:
-Given an array of integers, find the length of the longest strictly increasing subsequence.
-A subsequence is a sequence that can be derived by deleting some or no elements without changing the order of the remaining elements.
-"Strictly increasing" means every element in the subsequence is greater than the previous one.
+➡️ 🟦 🔵 🟢🔴⭕🟠🟣🟥🟧✔️ ☑️ • ‣ → ⁕
 
-Input: nums = [10, 9, 2, 5, 3, 7, 101, 18]
+# ⏺️ Problem Statement:
 
-Output: 4
-Explanation: The LIS is [2, 3, 7, 101]
-*/
+- Given an array of integers, find the length of the longest strictly increasing subsequence.
+- A subsequence is a sequence that can be derived by deleting some or no elements without changing the order of the remaining elements.
+- "Strictly increasing" means every element in the subsequence is greater than the previous one.
 
+- Input: nums = [10, 9, 2, 5, 3, 7, 101, 18]
 
-        package patterns.DynamicProgramming.codes;
+- Output: 4
+- Explanation: The LIS is [2, 3, 7, 101]
 
+```java
 public class LengthOfLIS {
 
     public int findLengthOfLIS(int[] arr){
@@ -45,4 +44,6 @@ public class LengthOfLIS {
 
         return maxLenght;
     }
+
 }
+```

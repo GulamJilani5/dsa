@@ -5,7 +5,9 @@
 - The sliding window technique maintains a subset (window) of data that slides through the larger dataset.
 - Solving problems by focusing on this window rather than the entire dataset at once.
 
-## ➡️ Questions
+### ➡️ Types Of Sliding Window
+
+### ➡️ Questions
 
 ##### 🟦 Maximum/Minimum Sum Subarray of Size K
 

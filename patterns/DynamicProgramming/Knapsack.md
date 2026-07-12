@@ -1,18 +1,16 @@
-/*
-🧩 Problem Statement:
-Given weights[], values[] and capacity, return max value in knapsack.
-Input:
-weights = [1, 3, 4, 5]
-values = [1, 4, 5, 7]
-capacity = 7
+➡️ 🟦 🔵 🟢🔴⭕🟠🟣🟥🟧✔️ ☑️ • ‣ → ⁕
 
-📤 Output:
-9 (Pick weights 3 and 4 → 4 + 5 = 9)
+# ⏺️ Problem Statement:
 
- */
+- Given weights[], values[] and capacity, return max value in knapsack.
+- Input:
+  - weights = [1, 3, 4, 5]
+  - values = [1, 4, 5, 7]
+  - capacity = 7
+- Output:
+  - 9 (Pick weights 3 and 4 → 4 + 5 = 9)
 
-package patterns.DynamicProgramming.codes;
-
+```java
 public class Knapsack {
 
     public int knapsack(int[] weights, int[] values, int capacity) {
@@ -35,3 +33,4 @@ public class Knapsack {
     }
 
 }
+```

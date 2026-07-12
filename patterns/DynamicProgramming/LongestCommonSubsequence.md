@@ -1,15 +1,12 @@
-/*
-🧩 Problem Statement:
-Given two strings text1 and text2, return the length of the longest common subsequence.
+➡️ 🟦 🔵 🟢🔴⭕🟠🟣🟥🟧✔️ ☑️ • ‣ → ⁕
 
-⌨️ Input: text1 = "abcde", text2 = "ace"
+# ⏺️ Problem Statement:
 
-📤 Output: 3 (ace is the LCS)
+- Given two strings text1 and text2, return the length of the longest common subsequence.
+- Input: text1 = "abcde", text2 = "ace"
+- Output: 3 (ace is the LCS)
 
- */
-
-package patterns.DynamicProgramming.codes;
-
+```java
 public class LongestCommonSubsequence {
 
     public int longestCommonSubsequence(String text1, String text2) {
@@ -29,3 +26,4 @@ public class LongestCommonSubsequence {
     }
 
 }
+```

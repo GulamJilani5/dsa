@@ -1,17 +1,13 @@
-/*
-🧩 Problem Statement:
-Given n, return the nth Fibonacci number.
-F(0) = 0, F(1) = 1, F(n) = F(n-1) + F(n-2)
+➡️ 🟦 🔵 🟢🔴⭕🟠🟣🟥🟧✔️ ☑️ • ‣ → ⁕
 
-⌨️ Input:
-n = 5
+# ⏺️ Problem Statement:
 
-📤 Output: 5
+- Given n, return the nth Fibonacci number.
+- F(0) = 0, F(1) = 1, F(n) = F(n-1) + F(n-2)
+- Input: n = 5
+- Output: 5
 
- */
-
-package patterns.DynamicProgramming.codes;
-
+```java
 public class FibonacciNumber {
 
     public int fib(int n) {
@@ -25,5 +21,5 @@ public class FibonacciNumber {
         }
         return dp[n];
     }
-
 }
+```

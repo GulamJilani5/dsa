@@ -1,17 +1,14 @@
-/*
-🧩 Problem Statement:
-You are a robber and can't rob two adjacent houses.
-Given nums (money in each house), return max money you can rob.
+➡️ 🟦 🔵 🟢🔴⭕🟠🟣🟥🟧✔️ ☑️ • ‣ → ⁕
 
-⌨️ Input:
-nums = [2,7,9,3,1]
+# ⏺️ Problem Statement:
 
-📤 Output:
-12 (Rob 2 + 9 + 1)
- */
+- You are a robber and can't rob two adjacent houses.
+- Given nums (money in each house), return max money you can rob.
 
-package patterns.DynamicProgramming.codes;
+- Input: nums = [2,7,9,3,1]
+- Output: 12 (Rob 2 + 9 + 1)
 
+```java
 public class HouseRobber {
 
     public int rob(int[] arr) {
@@ -27,8 +24,6 @@ public class HouseRobber {
         }
         return dp[arr.length - 1];
     }
-
-
-
-
 }
+
+```
