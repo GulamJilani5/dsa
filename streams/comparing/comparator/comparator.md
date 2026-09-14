@@ -1,147 +1,108 @@
 ⏺️ ➡️ 🟦 🔵 🟢🔴⭕🟠🟣🟥🟧✔️ ☑️ • ‣ → ⁕
 
-# ️ ➡️ Sort String by length (asc/desc) and find longest and shortest word
+# ⏺️ Comparator
 
-## 🟦 Sort String by length (ASC)
-
-List<String> words = List.of("java", "python", "javascript", "go", "c");
-
-```java
-
- words.stream()
-             .sorted(Comparator.comparingInt(String::length)) // Method Reference
-            //.sorted(Comparator.comparingInt(word -> word.length())) // Lambda expression
-             .forEach(System.out::println);
-```
-
-## 🟦 Sort String by length (DESC)
+- It is Functional Interface which has exactly one abstract method.
+- It has multiple usefull instance/defualt method and static methods.
 
 ```java
-words.stream()
-     .sorted(Comparator.comparingInt(String::length).reversed())
-     //.sorted(Comparator.comparingInt(word -> word.length()).reversed())
-     .forEach(System.out::println);
+@FunctionalInterface
+public interface Comparator<T> {
+int compare(T o1, T o2);
+...
+...
 
-```
-
-## 🟦 max()/min()
-
-```java
-String longestWord/shortestWord = words.stream()
-                              .max(Comparator.comparingInt(String::length)) // Method Reference
-                            //   .max(Comparator.comparingInt(word -> word.length())) // Lambda expression
-                            //   .min(Comparator.comparingInt(String::length)) // Method Reference
-                            //   .min(Comparator.comparingInt(word -> word.length())) // Lambda expression
-                              .orElse(null);
-```
-
-# ️ ➡️ Multiple fields sorting (salary, age, name case-insensitive)
-
-```java
-
-class Employee {
-    private int salary;
-    private int age;
-    private String name;
-
-    public int getSalary() { return salary; }
-    public int getAge() { return age; }
-    public String getName() { return name; }
 }
-
 ```
 
-## 🟦 Salary DESC, Age ASC, Name case-insensitive ASC
+```text
+Comparator<T>  → INTERFACE
+│
+├── abstract instance
+│   └── compare()
+│
+├── default instance
+│   ├── reversed()
+│   ├── thenComparing()
+│   ├── thenComparingInt()
+│   ├── thenComparingLong()
+│   └── thenComparingDouble()
+│
+└── static
+    ├── reverseOrder()
+    ├── naturalOrder()
+    ├── nullsFirst()
+    ├── nullsLast()
+    ├── comparing()
+    ├── comparingInt()
+    ├── comparingLong()
+    └── comparingDouble()
+```
+
+### ➡️ All the Methods
 
 ```java
-Comparator<Employee> cmp =
-        Comparator.comparingInt(Employee::getSalary).reversed()
-                  .thenComparingInt(Employee::getAge)
-                  .thenComparing(Employee::getName, String.CASE_INSENSITIVE_ORDER);
+@FunctionalInterface
+public interface Comparator<T> {
 
-list.stream().sorted(cmp).forEach(System.out::println);
+    // ABSTRACT INSTANCE METHOD
+    int compare(T o1, T o2);
 
+
+    // DEFAULT INSTANCE METHODS
+    default Comparator<T> reversed();
+
+    default Comparator<T> thenComparing(Comparator<? super T> other);
+
+    default <U> Comparator<T> thenComparing(
+            Function<? super T, ? extends U> keyExtractor);
+
+    default <U> Comparator<T> thenComparing(
+            Function<? super T, ? extends U> keyExtractor,
+            Comparator<? super U> keyComparator);
+
+    default Comparator<T> thenComparingInt(
+            ToIntFunction<? super T> keyExtractor);
+
+    default Comparator<T> thenComparingLong(
+            ToLongFunction<? super T> keyExtractor);
+
+    default Comparator<T> thenComparingDouble(
+            ToDoubleFunction<? super T> keyExtractor);
+
+
+    // STATIC METHODS
+    static <T extends Comparable<? super T>>
+    Comparator<T> reverseOrder();
+
+    static <T extends Comparable<? super T>>
+    Comparator<T> naturalOrder();
+
+    static <T>
+    Comparator<T> nullsFirst(Comparator<? super T> comparator);
+
+    static <T>
+    Comparator<T> nullsLast(Comparator<? super T> comparator);
+
+    static <T, U extends Comparable<? super U>>
+    Comparator<T> comparing(
+            Function<? super T, ? extends U> keyExtractor);
+
+    static <T, U>
+    Comparator<T> comparing(
+            Function<? super T, ? extends U> keyExtractor,
+            Comparator<? super U> keyComparator);
+
+    static <T>
+    Comparator<T> comparingInt(
+            ToIntFunction<? super T> keyExtractor);
+
+    static <T>
+    Comparator<T> comparingLong(
+            ToLongFunction<? super T> keyExtractor);
+
+    static <T>
+    Comparator<T> comparingDouble(
+            ToDoubleFunction<? super T> keyExtractor);
+}
 ```
-
-## 🟦 Salary ASC, Age DESC, Name ASC
-
-```java
-Comparator<Employee> cmp =
-        Comparator.comparingInt(Employee::getSalary)
-                  .thenComparing(Comparator.comparingInt(Employee::getAge).reversed())
-                  .thenComparing(Employee::getName);
-
-list.stream().sorted(cmp).forEach(System.out::println);
-
-```
-
-# ️➡️ Null safe sorting (elements or keys may be null)
-
-## 🟦 Null strings first, then sort by length
-
-```java
-List<String> list = Arrays.asList("java", null, "go", "python", null);
-
-list.stream()
-    .sorted(
-        Comparator.nullsFirst(
-            Comparator.comparingInt(String::length)
-        )
-    )
-    .forEach(System.out::println);
-
-```
-
-## 🟦 Null strings last + tie break lexicographically
-
-```java
-list.stream()
-    .sorted(
-        Comparator.nullsLast(
-            Comparator.comparingInt(String::length)
-                      .thenComparing(Comparator.naturalOrder())
-        )
-    )
-    .forEach(System.out::println);
-
-```
-
-## 🟦 Null-safe sorting for Employee (Employee itself may be null)
-
-### 🔵 Null employees last, sort by salary desc
-
-```java
-Comparator<Employee> cmp =
-        Comparator.nullsLast(
-            Comparator.comparingInt(Employee::getSalary).reversed()
-        );
-
-```
-
-### 🔵 Null-safe sorting when field may be null (example name can be null)
-
-```java
-Comparator<Employee> cmp =
-        Comparator.comparingInt(Employee::getSalary).reversed()
-                  .thenComparing(
-                      Employee::getName,
-                      Comparator.nullsLast(String.CASE_INSENSITIVE_ORDER)
-                  );
-
-```
-
-# ➡️ comparing() vs comparingInt()
-
-## 🟦 comparing(Key)
-
-- When **Key** is Object/non-primitive.
-- Best for `String`, `LocalDate`, `custom objects`
-- Boxing (int → Integer)
-- slightly slower
--
-
-## 🟦 comparingInt()/comparingLong()/comparingDouble()
-
-- When **Key** is primitive(int/long/double)
-- no boxing
-- Best for `int/double` fields like `age`, `salary`

@@ -1,27 +1,19 @@
 ⏺️ ➡️ 🟦 🔵 🟢🔴⭕🟠🟣🟥🟧✔️ ☑️ • ‣ → ⁕
 
-# ️➡️ Comparable
+# ⏺️
+
+## ️➡️ Comparable
 
 Use Comparable when a single natural order makes sense (e.g., **String**, **Integer**, **LocalDate**, or your class manually defines `compareTo`) or implements `class Product implements Comparable<Class>`.
 
-- **Integer**, **Double**, **Long**, **String** and **LocalDate** are having inbuilt `compareTo` natural order like simply `sorted()` or `comparator.naturalOrder()`
+- All Wrapper Classes, **String** and **LocalDate** are having inbuilt `compareTo` natural order like simply `sorted()` or `comparator.naturalOrder()`
 - for reverse order `.sorted(Comparator.reverseOrder())`
 
-# ➡️ Comparator
+## ➡️ Comparator
 
-Use Comparator when you need:
+### ️➡️ compareTo() vs compare()
 
-- compare()
-- Derived keys (`comparingInt`, `comparingDouble`, `comparing`)
-- Multiple fields (`thenComparing()`)
-- Reverse of your custom rule (`.reversed()`)
-- Descending natural order (`Comparator.reverseOrder()`)
-- Null-safe order (nullsFirst/Last)
-- Custom logic (lambdas)
-
-# ️➡️ compareTo() vs compare()
-
-### 🟦 compareTo()
+##### 🟦 compareTo()
 
 - Instance method, Belongs to the object
 - Define in Comparable interface
@@ -37,10 +29,11 @@ Use Comparator when you need:
 .max((a, b) -> a.compareTo(b)) //Lambda Expression
 ```
 
-### 🟦 static compare() (Wrapper Classes)
+##### 🟦 compare()
 
-- Static method, Belongs to the class
-- Called like this:
+- It is staic method in the ** All Wrapper Classes** and Instance method in the **Comparator** Interface
+
+- **For Wrapper Classes**
 
 ```java
 Integer.compare(a, b)
@@ -60,7 +53,6 @@ String.compare(a, b)   // Java 11+
 
 ```
 
-### 🟦 Non-static compare() (Comparator)
-
-- Instance method
-- Belongs to Comparator object
+- **For Comparator Interfaces**
+  - Instance method belongs to Comparator object
+  - It is used in lambda expressions.
