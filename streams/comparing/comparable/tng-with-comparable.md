@@ -72,6 +72,8 @@ names.stream()
 
 ```
 
+- Here `sorted()` internally uses `compareTo()` method of the **Comparable** interface.
+
 ## 🟦 Reverse Order
 
 ```java

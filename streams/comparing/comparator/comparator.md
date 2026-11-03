@@ -106,3 +106,51 @@ public interface Comparator<T> {
             ToDoubleFunction<? super T> keyExtractor);
 }
 ```
+
+### ➡️ Object - Employee
+
+- Here we decided that an employee's natural ordering is by salary.
+
+```java
+class Employee {
+
+    private String name;
+    private double salary;
+    private LocalDate hireDay;
+  // getters...
+  // setters...
+}
+```
+
+##### 🟦 sort employees by name
+
+```java
+Comparator<Employee> byName =
+    (e1, e2) -> e1.getName().compareTo(e2.getName());
+
+employees.stream()
+         .sorted(byName)
+         .forEach(e -> System.out.println(e.getName()));
+```
+
+##### 🟦 sort employees by hireDay
+
+```java
+Comparator<Employee> byHireDate =
+    (e1, e2) -> e1.getHireDay().compareTo(e2.getHireDay());
+
+employees.stream()
+         .sorted(byHireDate)
+         .forEach(e -> System.out.println(e.getName()));
+```
+
+##### 🟦 sort employees by salary
+
+```java
+Comparator<Employee> bySalary =
+    (e1, e2) -> Double.compare(e1.getSalary(), e2.getSalary());
+
+employees.stream()
+         .sorted(bySalary)
+         .forEach(e -> System.out.println(e.getName()));
+```

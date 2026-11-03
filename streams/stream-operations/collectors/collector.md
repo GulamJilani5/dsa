@@ -3,22 +3,29 @@
 # ⏺️ Collectors
 
 - They are neither intermediate or terminal operation.
-- They are mostly used inside the terminal operations.
+- They are mostly used inside the terminal operations(e.g: collect()).
 
-### ➡️ toList()/toSet()/toMap()
+### ➡️ Collectors
 
-### ➡️ groupingBy()
+##### 🟦 toList()/toSet()/toMap()
 
-### ➡️ partitioningBy()
+##### 🟦 groupingBy()
 
-### ➡️ mapping()
+##### 🟦 partitioningBy()
 
-### ➡️ collectingAndThen()
+##### 🟦 mapping()
 
-### ➡️ joining()
+##### 🟦 collectingAndThen()
 
-### ➡️ counting()
+##### 🟦 joining()
 
-### ➡️ summingInt()
+##### 🟦 counting()
 
-### ➡️ summarizingInt()
+##### 🟦 summingInt()
+
+##### 🟦 summarizingInt()
+
+### ➡️ Downstream Collectors
+
+- A **downstream collector** is simply a **collector** used inside another collector to perform additional operations, So usually they are same.
+- All **downstream collectors** are **collectors**, but not all collectors are necessarily downstream collectors.

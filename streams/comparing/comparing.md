@@ -11,9 +11,11 @@ Use Comparable when a single natural order makes sense (e.g., **String**, **Inte
 
 ## ➡️ Comparator
 
-### ️➡️ compareTo() vs compare()
+- It is used for the Custom Ordering.
 
-##### 🟦 compareTo()
+## ️➡️ compareTo() vs compare()
+
+#### 🟦 compareTo()
 
 - Instance method, Belongs to the object
 - Define in Comparable interface
@@ -29,11 +31,11 @@ Use Comparable when a single natural order makes sense (e.g., **String**, **Inte
 .max((a, b) -> a.compareTo(b)) //Lambda Expression
 ```
 
-##### 🟦 compare()
+#### 🟦 compare()
 
-- It is staic method in the ** All Wrapper Classes** and Instance method in the **Comparator** Interface
+- It is staic method in the **All Wrapper Classes** and Instance method in the **Comparator** Interface
 
-- **For Wrapper Classes**
+###### 🔵 **For Wrapper Classes**
 
 ```java
 Integer.compare(a, b)
@@ -53,6 +55,7 @@ String.compare(a, b)   // Java 11+
 
 ```
 
-- **For Comparator Interfaces**
-  - Instance method belongs to Comparator object
-  - It is used in lambda expressions.
+###### 🔵 **For Comparator Interfaces**
+
+- Instance method belongs to Comparator object
+- It is used in lambda expressions.
