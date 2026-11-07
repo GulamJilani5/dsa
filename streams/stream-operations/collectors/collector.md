@@ -7,23 +7,54 @@
 
 ### ➡️ Collectors
 
-##### 🟦 toList()/toSet()/toMap()
+##### 🟦 1. Basic Collectors
 
-##### 🟦 groupingBy()
+- toList()
+- toSet()
+- toMap()
+- toCollection()
 
-##### 🟦 partitioningBy()
+##### 🟦 2. Grouping & Partitioning
 
-##### 🟦 mapping()
+- groupingBy()
+- groupingByConcurrent()
+- partitioningBy()
 
-##### 🟦 collectingAndThen()
+##### 🟦 3. Transformation Collectors
 
-##### 🟦 joining()
+- mapping()
+- flatMapping()
+- filtering()
 
-##### 🟦 counting()
+##### 🟦 4. Post-processing Collectors
 
-##### 🟦 summingInt()
+- collectingAndThen()
 
-##### 🟦 summarizingInt()
+##### 🟦 5. Statistical & Numeric Collectors
+
+- counting()
+- summingInt()
+- summingLong()
+- summingDouble()
+- averagingInt()
+- averagingLong()
+- averagingDouble()
+- summarizingInt()
+- summarizingLong()
+- summarizingDouble()
+
+##### 🟦 6. Min & Max Collectors
+
+- maxBy()
+- minBy()
+
+##### 🟦 7. String Collector
+
+- joining()
+
+##### 🟦 8. Other Useful Collectors
+
+- reducing()
 
 ### ➡️ Downstream Collectors
 

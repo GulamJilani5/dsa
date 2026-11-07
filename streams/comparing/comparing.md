@@ -1,6 +1,6 @@
 ⏺️ ➡️ 🟦 🔵 🟢🔴⭕🟠🟣🟥🟧✔️ ☑️ • ‣ → ⁕
 
-# ⏺️
+# ⏺️ Comparable vs Comparator
 
 ## ️➡️ Comparable
 
