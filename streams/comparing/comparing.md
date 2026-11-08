@@ -9,6 +9,15 @@ Use Comparable when a single natural order makes sense (e.g., **String**, **Inte
 - All **Wrapper Classes**, **String** and **LocalDate** are having inbuilt `compareTo` natural order like simply `sorted()` or `comparator.naturalOrder()`
 - for reverse order `.sorted(Comparator.reverseOrder())`
 
+#### ️➡️ Highly Important 🟥🟧
+
+- Learning all of that becomes little confusing so only focusing on **Comparator's** built-in methods would solve my most of the problems.🟢
+- Instead of manually writing🔴
+  - **compareTo()** of the **Comparable**
+  - **compare()** of the **Comparator**
+  - **Integer.compare()** / **Double.compare()** of the **Wrapper** classes
+- we can use **Comparator's** built-in methods🟢 like **comparing()**, **comparingInt()**, **comparingDouble()**, **reversed()** and **thenComparing()** **thenComparingInt()** etc to solve most sorting requirements in Java Streams.🟥
+
 ## ➡️ Comparator
 
 - It is used for the Custom Ordering.
