@@ -4,6 +4,11 @@
 
 - It is Functional Interface which has exactly one abstract method.
 - It has multiple usefull instance/defualt method and static methods.
+- Instead of manually writing🔴
+  - **compareTo()** of the **Comparable**
+  - **compare()** of the **Comparator**
+  - **Integer.compare()** / **Double.compare()** of the **Wrapper** classes
+- we can use **Comparator's** built-in methods🟢 like **comparing()**, **comparingInt()**, **comparingDouble()**, **reversed()** and **thenComparing()** **thenComparingInt()** etc to solve most sorting requirements in Java Streams.🟥
 
 ```java
 @FunctionalInterface
@@ -121,6 +126,13 @@ class Employee {
   // setters...
 }
 ```
+
+- These are an example of **Comparator**, not **Comparable**.
+- Why, Because we are defining sorting rules externally, without implementing **Comparable** inside the **Employee** class.
+- All three are Comparators:
+  - **byName** → **Comparator** by employee name.
+  - **byHireDate** → **Comparator** by hire date.
+  - **bySalary** → **Comparator** by salary.
 
 ##### 🟦 sort employees by name
 
